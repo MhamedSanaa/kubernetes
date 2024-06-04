@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice-order-deployment
+  labels:
+    app: microservice-order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microservice-order
+  template:
+    metadata:
+      labels:
+        app: microservice-order
+    spec:
+      containers:
+      - name: microservice-order
+        image: ninjaops/microservice-order
+        ports:
+          - containerPort: 8083
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microservice-order-service
+spec:
+  type: ClusterIP
+  selector:
+    app: microservice-order
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8083
