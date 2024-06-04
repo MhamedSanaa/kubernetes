@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-user
-        image: ninjaops/microservice-user
+        image: ninjaops/microservice-user:1
         ports:
           - containerPort: 8080
 ---
