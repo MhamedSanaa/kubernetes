@@ -27,7 +27,7 @@ spec:
       volumes:
         - name: postgres-storage
           persistentVolumeClaim:
-            claimName: postgres-pvc
+            claimName: postgres-ecomm-pv
 
 ---
 # postgres-service.yaml
