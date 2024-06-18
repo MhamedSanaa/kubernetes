@@ -1,0 +1,17 @@
+# configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: test
+data:
+  AUTH0_ISSUER: https://dev-31xput8f2txnqmen.eu.auth0.com
+  AUTH0_USERINFO_URL: https://dev-31xput8f2txnqmen.eu.auth0.com/userinfo
+  ELASTICSEARCH_PASSWORD: DkIedPPSCb
+  ELASTICSEARCH_URL: http://host.docker.internal:9200
+  POSTGRES_DB: prototype1
+  POSTGRES_PASSWORD: avizva9372
+  POSTGRES_URL: host.docker.internal
+  POSTGRES_USER: postgres
+  HOST_URL: host.docker.internal
+  STRIPE_API_KEY: pk_test_51OxoiaP7UssPX80Djz1QMZNvcGMkZRg9I6l7AEvu7mkakTeiXbcu7S4AriZWh27wAYY6ME7UmBtIGgW5n6ZTfVWA00r0fa7iyg
