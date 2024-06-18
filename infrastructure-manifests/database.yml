@@ -23,11 +23,11 @@ spec:
                 name: app-config
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
-              name: postgres-storage
+              name: postgredb
       volumes:
-        - name: postgres-storage
+        - name: postgredb
           persistentVolumeClaim:
-            claimName: postgres-ecomm-pv
+            claimName: postgres-pv-claim
 
 ---
 # postgres-service.yaml
