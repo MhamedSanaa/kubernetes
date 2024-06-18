@@ -45,6 +45,11 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: AUTH0_ISSUER
+          - name: AUTH0_USERINFO_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: AUTH0_USERINFO_URL
           - name: HOST_URL
             valueFrom:
               configMapKeyRef:
