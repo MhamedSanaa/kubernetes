@@ -19,6 +19,38 @@ spec:
         image: ninjaops/microservice-gateway:1
         ports:
           - containerPort: 8091
+        env:
+          - name: POSTGRES_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_URL
+          - name: POSTGRES_DB
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_DB
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_USER
+          - name: AUTH0_ISSUER
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: AUTH0_ISSUER
+          - name: HOST_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: HOST_URL
+
 ---
 apiVersion: v1
 kind: Service

@@ -20,26 +20,31 @@ spec:
         ports:
           - containerPort: 8081
         env:
-            - name: POSTGRES_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_URL
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_PASSWORD
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_USER
+          - name: POSTGRES_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_URL
+          - name: POSTGRES_DB
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_DB
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_USER
+          - name: HOST_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: HOST_URL
 ---
 apiVersion: v1
 kind: Service
