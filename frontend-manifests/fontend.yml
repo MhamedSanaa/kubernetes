@@ -18,6 +18,15 @@ spec:
           image: ninjaops/frontend:15
           ports:
             - containerPort: 80
+          env:
+            - name: REACT_APP_SERVER_BASE_URL
+              value: "http://192.168.199.134:8091"
+            - name: REACT_APP_WS_BASE_URL
+              value: "ws://192.168.199.134:80"
+            - name: NODE_ENV
+              value: "production"
+            - name: PUBLIC_URL
+              value: "http://192.168.199.134:80"
 
 ---
 
