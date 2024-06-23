@@ -19,7 +19,7 @@ spec:
           command: ["sh", "-c", "cp /mnt/data/init.sh /mnt/data/ecomm.sql /docker-entrypoint-initdb.d"]
           volumeMounts:
             - mountPath: /docker-entrypoint-initdb.d
-              name: init-scripts
+              name: host-path-volume
             - mountPath: /mnt/data
               name: host-path-volume
       containers:
