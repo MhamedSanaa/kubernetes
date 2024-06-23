@@ -12,6 +12,8 @@ spec:
       labels:
         app: elasticsearch
     spec:
+      securityContext:
+        fsGroup: 1000 # Ensure the group ID can write to the data volume
       containers:
         - name: elasticsearch
           image: elasticsearch:8.11.1
@@ -55,6 +57,10 @@ spec:
           volumeMounts:
             - name: elasticsearch-pv-volume
               mountPath: /usr/share/elasticsearch/data
+          securityContext:
+            runAsUser: 1000
+            runAsGroup: 1000
+            fsGroup: 1000
       volumes:
         - name: elasticsearch-pv-volume
           persistentVolumeClaim:
