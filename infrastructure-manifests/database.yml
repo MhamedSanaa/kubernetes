@@ -13,6 +13,26 @@ spec:
       labels:
         app: postgres
     spec:
+      initContainers:
+        - name: init-script
+          image: postgres:14.7
+          command: ['sh', '-c', 'cp /host-scripts/install-pgcrypto.sh /docker-entrypoint-initdb.d/install-pgcrypto.sh && chmod +x /docker-entrypoint-initdb.d/install-pgcrypto.sh']
+          volumeMounts:
+            - name: host-scripts
+              mountPath: /host-scripts
+            - name: postgredb
+              mountPath: /var/lib/postgresql/data
+        - name: init-database
+          image: postgres:14.7
+          command: ['sh', '-c', 'psql -U postgres -f /host-scripts/init-database.sql']
+          envFrom:
+            - configMapRef:
+                name: app-config
+          volumeMounts:
+            - name: host-scripts
+              mountPath: /host-scripts
+            - name: postgredb
+              mountPath: /var/lib/postgresql/data
       containers:
         - name: postgres
           image: postgres:14.7
@@ -28,6 +48,9 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
+        - name: host-scripts
+          hostPath:
+            path: /home/kubeuser
 
 ---
 # postgres-service.yaml
