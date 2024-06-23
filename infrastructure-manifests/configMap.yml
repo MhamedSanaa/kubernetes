@@ -7,7 +7,7 @@ data:
   AUTH0_ISSUER: https://dev-31xput8f2txnqmen.eu.auth0.com
   AUTH0_USERINFO_URL: https://dev-31xput8f2txnqmen.eu.auth0.com/userinfo
   ELASTICSEARCH_PASSWORD: DkIedPPSCb
-  ELASTICSEARCH_URL: http://host.docker.internal:9200
+  ELASTICSEARCH_URL: elasticsearch:9200
   POSTGRES_DB: prototype1
   POSTGRES_PASSWORD: avizva9372
   POSTGRES_URL: postgres
