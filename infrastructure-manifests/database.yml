@@ -16,11 +16,16 @@ spec:
       initContainers:
         - name: copy-scripts
           image: alpine:latest
-          command: ["sh", "-c", "cp /mnt/data/init.sh /mnt/data/ecomm.sql /docker-entrypoint-initdb.d"]
+          command:
+            [
+              "sh",
+              "-c",
+              "cp /home/kubeuser/init.sh /home/kubeuser/ecomm.sql /docker-entrypoint-initdb.d",
+            ]
           volumeMounts:
             - mountPath: /docker-entrypoint-initdb.d
               name: host-path-volume
-            - mountPath: /mnt/data
+            - mountPath: /home/kubeuser
               name: host-path-volume
       containers:
         - name: postgres
@@ -33,7 +38,7 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
-            - mountPath: /mnt/data
+            - mountPath: /home/kubeuser
               name: host-path-volume
               readOnly: true
       volumes:
