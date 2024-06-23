@@ -20,7 +20,7 @@ spec:
             [
               "sh",
               "-c",
-              "cp /home/kubeuser/ecomm.sql /docker-entrypoint-initdb.d",
+              "cp /home/kubeuser/ecomm2.sql /docker-entrypoint-initdb.d",
             ]
           volumeMounts:
             - mountPath: /docker-entrypoint-initdb.d
