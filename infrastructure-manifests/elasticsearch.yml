@@ -56,7 +56,7 @@ spec:
               value: "false"
           volumeMounts:
             - name: elasticsearch-pv-volume
-              mountPath: /usr/share/elasticsearch/data
+              mountPath: /var/lib/elasticsearch/data
           securityContext:
             runAsUser: 1000
             runAsGroup: 1000
