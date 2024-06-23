@@ -13,20 +13,6 @@ spec:
       labels:
         app: postgres
     spec:
-      initContainers:
-        - name: copy-scripts
-          image: alpine:latest
-          command:
-            [
-              "sh",
-              "-c",
-              "cp /home/kubeuser/ecomm2.sql /docker-entrypoint-initdb.d",
-            ]
-          volumeMounts:
-            - mountPath: /docker-entrypoint-initdb.d
-              name: host-path-volume
-            - mountPath: /home/kubeuser
-              name: host-path-volume
       containers:
         - name: postgres
           image: postgres:14.7
