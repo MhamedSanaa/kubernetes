@@ -45,6 +45,16 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: HOST_URL
+          - name: ELASTICSEARCH_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: ELASTICSEARCH_URL
+          - name: ELASTICSEARCH_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: ELASTICSEARCH_PASSWORD
 ---
 apiVersion: v1
 kind: Service
