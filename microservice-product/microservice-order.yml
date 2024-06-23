@@ -20,56 +20,56 @@ spec:
         ports:
           - containerPort: 8083
         env:
-            - name: POSTGRES_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_URL
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_PASSWORD
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: POSTGRES_USER
-            - name: STRIPE_API_KEY
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: STRIPE_API_KEY
-            - name: USER_SERVICE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: USER_SERVICE_URL
-            - name: USER_SERVICE_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: USER_SERVICE_PORT
-            - name: CART_SERVICE_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: CART_SERVICE_URL
-            - name: CART_SERVICE_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: CART_SERVICE_PORT
-            - name: HOST_URL
-              valueFrom:
-                configMapKeyRef:
-                  name: app-config
-                  key: HOST_URL
+          - name: POSTGRES_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_URL
+          - name: POSTGRES_DB
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_DB
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: POSTGRES_USER
+          - name: STRIPE_API_KEY
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: STRIPE_API_KEY
+          - name: USER_SERVICE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: USER_SERVICE_URL
+          - name: USER_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: USER_SERVICE_PORT
+          - name: CART_SERVICE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: CART_SERVICE_URL
+          - name: CART_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: CART_SERVICE_PORT
+          - name: HOST_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: HOST_URL
 ---
 apiVersion: v1
 kind: Service

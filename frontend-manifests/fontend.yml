@@ -21,7 +21,28 @@ spec:
         #     memory: "128Mi"
         #     cpu: "500m"
         ports:
-        - containerPort: 80
+          - containerPort: 80
+        env:
+          - name: REACT_APP_SERVER_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: REACT_APP_SERVER_BASE_URL
+          - name: REACT_APP_WS_BASE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: REACT_APP_WS_BASE_URL
+          - name: PUBLIC_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: PUBLIC_URL
+          - name: NODE_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: NODE_ENV
 ---
 
 apiVersion: v1
