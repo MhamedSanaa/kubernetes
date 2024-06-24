@@ -22,6 +22,10 @@ spec:
         #     cpu: "500m"
         ports:
           - containerPort: 80
+        volumeMounts:
+          - name: tls-vol
+            mountPath: /etc/ssl/certs
+            readOnly: true
         env:
           - name: REACT_APP_SERVER_BASE_URL
             valueFrom:
@@ -43,8 +47,12 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: NODE_ENV
----
+      volumes:
+        - name: tls-vol
+          secret:
+            secretName: tls-secret
 
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -54,7 +62,7 @@ spec:
   selector:
     app: react-app
   ports:
-    - port: 80
+    - port: 443
       protocol: TCP
       targetPort: 80
       nodePort: 31000
