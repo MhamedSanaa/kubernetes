@@ -73,5 +73,5 @@ spec:
       nodePort: 31000  # NodePort for HTTP (optional, adjust as needed)
     - name: https
       port: 443   # Expose port 443 internally within the cluster for HTTPS
-      targetPort: 80   # Nginx in the container listens on port 80
+      targetPort: 443   # Nginx in the container listens on port 80
       nodePort: 31001  # NodePort for HTTPS (adjust as needed)
