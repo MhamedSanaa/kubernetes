@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: ninjaops/frontend:4
+        image: ninjaops/frontend:5
         imagePullPolicy: Always
         # resources:
         #   limits:
@@ -29,9 +29,9 @@ spec:
             readOnly: true
         env:
           - name: TLS_CERT_PATH
-            value: "/etc/tls/tls.crt"
+            value: "/etc/ssl/certs/tls.crt"
           - name: TLS_KEY_PATH
-            value: "/etc/tls/tls.key"
+            value: "/etc/ssl/certs/tls.key"
           - name: REACT_APP_SERVER_BASE_URL
             valueFrom:
               configMapKeyRef:
