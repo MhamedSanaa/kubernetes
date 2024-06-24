@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-cart
-        image: ninjaops/microservice-cart:1
+        image: ninjaops/microservice-cart:2
         ports:
           - containerPort: 8082
         env:
