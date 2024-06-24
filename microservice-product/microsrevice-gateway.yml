@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-gateway
-        image: ninjaops/microservice-gateway:3
+        image: ninjaops/microservice-gateway:4
         ports:
           - containerPort: 8091
         env:
