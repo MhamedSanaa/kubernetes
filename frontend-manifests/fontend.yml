@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: ninjaops/frontend:2
+        image: ninjaops/frontend:3
         imagePullPolicy: Always
         # resources:
         #   limits:
@@ -22,6 +22,7 @@ spec:
         #     cpu: "500m"
         ports:
           - containerPort: 80
+          - containerPort: 443
         volumeMounts:
           - name: tls-vol
             mountPath: /etc/ssl/certs
@@ -66,7 +67,11 @@ spec:
   selector:
     app: react-app
   ports:
-    - port: 443
-      protocol: TCP
+    - name: http
+      port: 80    # Expose port 80 internally within the cluster
       targetPort: 80
-      nodePort: 31000
+      nodePort: 31000  # NodePort for HTTP (optional, adjust as needed)
+    - name: https
+      port: 443   # Expose port 443 internally within the cluster for HTTPS
+      targetPort: 80   # Nginx in the container listens on port 80
+      nodePort: 31001  # NodePort for HTTPS (adjust as needed)
