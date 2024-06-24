@@ -20,6 +20,8 @@ data:
   PRODUCT_SERVICE_PORT: "8081"
   CART_SERVICE_URL: microservice-cart
   CART_SERVICE_PORT: "8082"
+  ORDER_SERVICE_URL: microservice-cart
+  ORDER_SERVICE_PORT: "8082"
   REACT_APP_SERVER_BASE_URL: microservice-gateway:8091
   REACT_APP_WS_BASE_URL: ws://react-app:80
   NODE_ENV: production

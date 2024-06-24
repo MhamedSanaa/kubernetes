@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-gateway
-        image: ninjaops/microservice-gateway:2
+        image: ninjaops/microservice-gateway:3
         ports:
           - containerPort: 8091
         env:
@@ -50,11 +50,46 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: AUTH0_USERINFO_URL
-          - name: HOST_URL
+          - name: USER_SERVICE_URL
             valueFrom:
               configMapKeyRef:
                 name: app-config
-                key: HOST_URL
+                key: USER_SERVICE_URL
+          - name: USER_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: USER_SERVICE_PORT
+          - name: CART_SERVICE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: CART_SERVICE_URL
+          - name: CART_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: CART_SERVICE_PORT
+          - name: PRODUCT_SERVICE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: PRODUCT_SERVICE_URL
+          - name: PRODUCT_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: PRODUCT_SERVICE_PORT
+          - name: ORDER_SERVICE_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: ORDER_SERVICE_URL
+          - name: ORDER_SERVICE_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: ORDER_SERVICE_PORT
 
 ---
 apiVersion: v1
