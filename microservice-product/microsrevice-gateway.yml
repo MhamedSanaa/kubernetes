@@ -97,7 +97,7 @@ kind: Service
 metadata:
   name: microservice-gateway-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: microservice-gateway
   ports:
