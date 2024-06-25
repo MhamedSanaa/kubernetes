@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: ninjaops/frontend:10
+        image: ninjaops/frontend:11
         imagePullPolicy: Always
         # resources:
         #   limits:
