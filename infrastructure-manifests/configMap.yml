@@ -14,9 +14,9 @@ data:
   POSTGRES_USER: postgres
   HOST_URL: host.docker.internal
   STRIPE_API_KEY: pk_test_51OxoiaP7UssPX80Djz1QMZNvcGMkZRg9I6l7AEvu7mkakTeiXbcu7S4AriZWh27wAYY6ME7UmBtIGgW5n6ZTfVWA00r0fa7iyg
-  USER_SERVICE_URL: microservice-cart-service
+  USER_SERVICE_URL: microservice-user-service
   USER_SERVICE_PORT: "8080"
-  PRODUCT_SERVICE_URL: microservice-cart-service
+  PRODUCT_SERVICE_URL: microservice-product-service
   PRODUCT_SERVICE_PORT: "8081"
   CART_SERVICE_URL: microservice-cart-service
   CART_SERVICE_PORT: "8082"
