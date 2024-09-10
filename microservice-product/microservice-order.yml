@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-order
-        image: ninjaops/microservice-order:1
+        image: ninjaops/microservice-order:2
         ports:
           - containerPort: 8083
         env:
