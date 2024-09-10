@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: ninjaops/frontend:18
+        image: ninjaops/frontend:19
         imagePullPolicy: Always
         # resources:
         #   limits:
@@ -23,15 +23,7 @@ spec:
         ports:
           - containerPort: 80
           - containerPort: 443
-        volumeMounts:
-          - name: tls-vol
-            mountPath: /etc/ssl/certs
-            readOnly: true
         env:
-          - name: TLS_CERT_PATH
-            value: "/etc/ssl/certs/tls.crt"
-          - name: TLS_KEY_PATH
-            value: "/etc/ssl/certs/tls.key"
           - name: REACT_APP_SERVER_BASE_URL
             valueFrom:
               configMapKeyRef:
@@ -52,10 +44,6 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: NODE_ENV
-      volumes:
-        - name: tls-vol
-          secret:
-            secretName: tls-secret
 
 ---
 apiVersion: v1
