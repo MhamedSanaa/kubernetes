@@ -13,7 +13,7 @@ data:
   POSTGRES_DB: azerty
   POSTGRES_PASSWORD: azerty
   POSTGRES_URL: postgres
-  POSTGRES_USER: azerty
+  POSTGRES_USER: postgres
   USER_SERVICE_URL: microservice-user-service
   USER_SERVICE_PORT: "8080"
   PRODUCT_SERVICE_URL: microservice-product-service
