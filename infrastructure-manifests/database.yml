@@ -15,12 +15,25 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: ninjaops/infrastructure-database:10
+          image: ninjaops/infrastructure-database:11
           ports:
             - containerPort: 5432
-          envFrom:
-            - configMapRef:
-                name: app-config
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: global-configuration
+                  key: POSTGRES_DB
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: global-configuration
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: global-configuration
+                  key: POSTGRES_USER
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
