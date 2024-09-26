@@ -20,7 +20,6 @@ spec:
           ports:
             - containerPort: 6379
           command: ["redis-server", "--protected-mode", "no", "--loglevel", "verbose", "--requirepass", "eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81"]
-          restartPolicy: Always # Default restart policy for deployments
 ---
 apiVersion: v1
 kind: Service
