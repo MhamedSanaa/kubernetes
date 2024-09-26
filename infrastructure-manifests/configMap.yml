@@ -11,7 +11,7 @@ data:
   ELASTICSEARCH_PASSWORD: DkIedPPSCb
   ELASTICSEARCH_URL: elasticsearch:9200
   POSTGRES_DB: ecomm
-  POSTGRES_PASSWORD: postgres
+  POSTGRES_PASSWORD: azerty
   POSTGRES_URL: postgres
   POSTGRES_USER: postgres
   USER_SERVICE_URL: microservice-user-service
