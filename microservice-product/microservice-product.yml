@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-product
-        image: ninjaops/microservice-product:5
+        image: ninjaops/microservice-product:9
         ports:
           - containerPort: 8081
         env:
@@ -55,6 +55,16 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: ELASTICSEARCH_PASSWORD
+          - name: REDIS_URL
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: REDIS_URL
+          - name: REDIS_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: REDIS_PORT
 ---
 apiVersion: v1
 kind: Service
