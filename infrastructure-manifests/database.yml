@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: ninjaops/infrastructure-database:5
+          image: ninjaops/infrastructure-database:6
           ports:
             - containerPort: 5432
           envFrom:
