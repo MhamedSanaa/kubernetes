@@ -22,17 +22,17 @@ spec:
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
-                  name: global-configuration
+                  name: app-config
                   key: POSTGRES_DB
             - name: POSTGRES_PASSWORD
               valueFrom:
                 configMapKeyRef:
-                  name: global-configuration
+                  name: app-config
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_USER
               valueFrom:
                 configMapKeyRef:
-                  name: global-configuration
+                  name: app-config
                   key: POSTGRES_USER
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
