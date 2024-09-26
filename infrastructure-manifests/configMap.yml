@@ -6,14 +6,14 @@ metadata:
 data:
   AUTH0_ISSUER: https://dev-31xput8f2txnqmen.eu.auth0.com
   AUTH0_USERINFO_URL: https://dev-31xput8f2txnqmen.eu.auth0.com/userinfo
+  HOST_URL: host.docker.internal
+  STRIPE_API_KEY: pk_test_51OxoiaP7UssPX80Djz1QMZNvcGMkZRg9I6l7AEvu7mkakTeiXbcu7S4AriZWh27wAYY6ME7UmBtIGgW5n6ZTfVWA00r0fa7iyg
   ELASTICSEARCH_PASSWORD: DkIedPPSCb
   ELASTICSEARCH_URL: elasticsearch:9200
   POSTGRES_DB: azerty
   POSTGRES_PASSWORD: azerty
   POSTGRES_URL: postgres
-  POSTGRES_USER: postgres
-  HOST_URL: host.docker.internal
-  STRIPE_API_KEY: pk_test_51OxoiaP7UssPX80Djz1QMZNvcGMkZRg9I6l7AEvu7mkakTeiXbcu7S4AriZWh27wAYY6ME7UmBtIGgW5n6ZTfVWA00r0fa7iyg
+  POSTGRES_USER: azerty
   USER_SERVICE_URL: microservice-user-service
   USER_SERVICE_PORT: "8080"
   PRODUCT_SERVICE_URL: microservice-product-service
@@ -22,7 +22,7 @@ data:
   CART_SERVICE_PORT: "8082"
   ORDER_SERVICE_URL: microservice-order-service
   ORDER_SERVICE_PORT: "8083"
-  REACT_APP_SERVER_BASE_URL: http://192.168.199.134:31120
-  REACT_APP_WS_BASE_URL: ws://192.168.199.134:31120/ws/events
+  REACT_APP_SERVER_BASE_URL: http://192.168.199.134:31002
+  REACT_APP_WS_BASE_URL: ws://192.168.199.134:31002/ws/events
   NODE_ENV: production
   PUBLIC_URL: /
