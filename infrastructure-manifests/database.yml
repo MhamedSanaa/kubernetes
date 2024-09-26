@@ -15,13 +15,17 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: ninjaops/infrastructure-database:6
+          image: ninjaops/infrastructure-database:7
           imagePullPolicy: Always
           ports:
             - containerPort: 5432
-          envFrom:
-            - configMapRef:
-                name: app-config
+          env:
+            - name: POSTGRES_USER
+              value: "azerty"
+            - name: POSTGRES_PASSWORD
+              value: "azerty"
+            - name: POSTGRES_DB
+              value: "azerty"
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
