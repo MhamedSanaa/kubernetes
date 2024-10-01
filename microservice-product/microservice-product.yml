@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-product
-        image: ninjaops/microservice-product:15
+        image: ninjaops/microservice-product:16
         imagePullPolicy: Always
         ports:
           - containerPort: 8081
