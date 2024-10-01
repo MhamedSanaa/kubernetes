@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: microservice-product
-        image: ninjaops/microservice-product:5
+        image: ninjaops/microservice-product:3
         ports:
           - containerPort: 8081
         env:
