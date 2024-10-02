@@ -66,6 +66,11 @@ spec:
               configMapKeyRef:
                 name: app-config
                 key: REDIS_PORT
+          - name: REDIS_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: app-config
+                key: REDIS_PASSWORD
 ---
 apiVersion: v1
 kind: Service
